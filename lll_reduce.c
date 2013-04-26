@@ -106,6 +106,7 @@ void lll_reduce(double* b, int n, double lc, double uc)
   }	    
 }
 
+//Numerically stable gram schmidt algorithm
 void gram_schmidt(double* b, double* mu, double* B, int n)
 {
   int i,j,k;
@@ -145,11 +146,4 @@ void gram_schmidt(double* b, double* mu, double* B, int n)
     }
     B[i] = dot;
   }
-  for (i = 0; i < n; i++){
-    for (j = 0; j < n; j++){
-      printf("%f   ", b_star[i*n + j]);
-    }
-    printf("\n");
-  }
-  printf("\n--------------------------------\n\n");
 }
